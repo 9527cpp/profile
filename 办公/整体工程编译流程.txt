@@ -1,0 +1,86 @@
+
+
+make_all.sh:
+. build/envsetup.sh 定义一些muboot mkernel
+&& 
+lunch && 配置编译的环境变量
+make -j8  编译sdk
+&& 
+cd applications/  
+&& ./mkall.sh 编译app
+&& 
+cd .. 
+&& pack 整体打包(pack_img.sh + post_pack.sh)
+
+TOP_PATH=${ROOT_PATH}/..
+OUT_PATH=${TOP_PATH}/out
+TINAOUT_PATH="${OUT_PATH}/${TARGET_BOARD}"
+TINAOUT_PATH = proj/out/v459-y301gb
+
+envsetup.sh:
+TINA_BUILD_TOP=/home/lijun/proj
+TINA_TARGET_ARCH=arm
+TARGET_PRODUCT=v459_y301gb
+TARGET_PLATFORM=v459
+TARGET_BOARD=v459-y301gb
+TARGET_PLAN=y301gb
+TARGET_BUILD_VARIANT=tina
+TARGET_BUILD_TYPE=release
+TARGET_KERNEL_VERSION=4.9
+TARGET_UBOOT=u-boot-2018
+TARGET_CHIP=sun8iw19p1
+
+pack.sh:
+local T=$(gettop)
+local chip= sun5i----> sun8iw19p1
+local platform=$(get_build_var TARGET_BUILD_VARIANT)--->tina
+local board_platform=$(get_build_var TARGET_BOARD_PLATFORM)
+local board=$(get_build_var TARGET_BOARD)--->v459-y301gb
+local debug=uart0
+local sigmode=none
+local securemode=none
+local mode=normal
+local programmer=none
+local tar_image=none
+$T/scripts/pack_img.sh -c $chip -p $platform -b $board \                                                                                    
+ -d $debug -s $sigmode -m $mode -w $programmer -v $securemode -i $tar_image -t $T
+
+pack_img.sh:
+TINA_CONFIG_DIR = proj/target/allwinner  (not use)
+LONGAN_CONFIG_DIR= proj/device/config/chips/v459/configs (use this)
+  
+ROOT_DIR=proj/out/v459-y301gb
+PACK_CHIP=${FLAGS_chip}
+PACK_PLATFORM=${FLAGS_platform}
+PACK_BOARD=${FLAGS_board}    y301gb
+PACK_KERN=${FLAGS_kernel}                                                          
+PACK_DEBUG=${FLAGS_debug_mode}
+PACK_SIG=${FLAGS_signture}
+PACK_SECURE=${FLAGS_secure}
+PACK_MODE=${FLAGS_mode}
+PACK_FUNC=${FLAGS_function}
+PACK_PROGRAMMER=${FLAGS_programmer}
+PACK_TAR_IMAGE=${FLAGS_tar_image}
+PACK_TOPDIR=${FLAGS_topdir}
+MULTI_CONFIG_INDEX=0
+SUFFIX=""
+
+
+uboot 从300多K裁剪到160K,方法如下：
+1.cd　brandy-2.0/u-boot-2018目录下打上uboot的补丁　
+2.编译：在brandy-2.0/u-boot-2018 下执行 make distclean && make sun8iw19p1_nor_defconfig &&make -j
+3.重新编译SDK和烧写
+
+
+muboot && mkernel:
+
+
+muboot 执行后会在device/config/chips/v459/bin下生成 u-boot-spinor-sun8iw19p1.bin
+mkernel 执行后
+
+
+pack_img.sh:
+${LONGAN_CONFIG_DIR}/../bin/u-boot-spinor-${PACK_CHIP}.bin:image/u-boot-spinor.fex
+将 device/config/chips/v459/bin/u-boot-spinor-sun8iw19p1.bin 生成	out/v459-y301gb/u-boot-spinor.fex
+
+

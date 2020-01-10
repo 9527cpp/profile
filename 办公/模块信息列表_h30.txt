@@ -1,0 +1,71 @@
+
+1.公司名称			       （必填）
+上海小蚁科技有限公司
+
+2.产品类型（最终形态）                 （必填：如TV?STB?OTT?Tablet?）
+家庭摄像机
+
+3.项目名称
+h30
+
+
+4.量产时间&&预估订单量(Million/Year)	（必填）
+已经量产
+	
+
+5.主控芯片/架构				（必填：如Hi3798）
+hisi 3518ev200
+
+
+6.平台信息+平台厂家信息			（必填）
+hisi
+	
+
+7.WIFI模块/芯片型号			（必填：如MT7601U/RTL8188EU/8801U）
+MT7601U
+
+
+8.功能需求（STA/AP/P2P/SMARTLINK）	（必填）
+作为sta使用
+	
+
+9.模块接口(UART/SDIO/USB)		（必填）	
+usb
+
+
+10.作业系统（linux/android/...）	（必填：如Linux/Android5.0）
+Linux
+	
+
+11.Kernel Version			（必填）
+Linux version 3.4.35
+
+
+12.交叉编译工具
+arm-linux
+gcc version 4.8.3 20131202 (prerelease) (Hisilicon_v300)
+
+13.WIFI模块驱动version                  （必填）
+wlan0     driverVer:Driver version-JEDI.MP1.mt7601u.v1.5.1_20170821_2_SKU, Aug 21 2017 19:40:43
+
+
+14.出现问题前操作(详细描述,包括修改文件,提供的信息越全，以便我们能尽快找到问题所在)
+	
+
+15.对比操作
+
+
+16.LOG信息：（可附件的形式）	
+见附件
+
+
+17.WiFi认证的需求					（如有必填：FCC/CE...）
+
+
+18.该案是否经RTK模组厂或代理商以及原厂review过线路	（必填）
+是
+
+
+19.BT功能						（如有必填：如基本功能，BLE遥控器，语音识别...）
+
+	

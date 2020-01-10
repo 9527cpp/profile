@@ -1,0 +1,17 @@
+﻿1.将write_dev,read_dev 两个指令文件到sd卡根目录。
+
+2.sd卡插入设备，设备接串口，设备上电
+
+3.在串口终端输入写号命令(例子如下:)
+/tmp/sd/write_dev "00000000|FFFFFFFFFFFFFFFF|TNPCHNB-778450-CSTYW|rdgH1u488HVO6cqK|BFCNY027W2NCPK190904"
+
+对应的字符如下：
+         didmi |        sn      |        uid         |       key      |       did
+例如："00000000|FFFFFFFFFFFFFFFF|TNPCHNB-778450-CSTYW|rdgH1u488HVO6cqK|BFCNY027W2NCPK190904"
+
+文件“y30_80pcs.txt”里已经提供了80个DID。 注意：key 和 did 位置要调整一下。
+
+4.读取设备did命令（命令如下）
+/tmp/sd/read_dev
+
+"00000000|FFFFFFFFFFFFFFFF|TNPXGAB-056266-PJRLL|IGkUEHMhRMBJrm2X|A0822002J8ZCSG190725"

@@ -1,0 +1,25 @@
+基本烧录：
+1：拷贝bin文件-->工程目录下   sz  ./out/v459-y301gb/tina_v459-y301gb_uart0_nor.img
+下载到windows某个目录下
+2：做烧录盘 -->插入带t卡的usb设备 双击PhoenixCard工具选择下载下来的bin文件 制作卡种类 选择 量产卡 点击烧卡 直到提示烧录成功
+3：升级-->设备连上u转串 波特率115200 将t卡插入设备 直到log输出 升级成功
+
+自建工程
+在application/app下新建工程(例如mytest)并编码 编写makefile
+并修改./mkall.sh 启动编译新的工程mytest
+并修改application/out/tmphome/home/app/init.sh 将mytest作为启动项
+如果板子先前烧过tina_v459-y301gb_uart0_nor.img
+如果改了application 只需要在application下 执行./mkall.sh
+
+方法1：(推荐)
+那么就会在application/out/yi_image目录下 生成home_v459文件
+(如果t卡之前做了烧录盘需要恢复卡)
+打开PhoenixCard工具 插上t卡 将t卡恢复 -->点击恢复卡
+需要将该文件拷贝普通t卡上
+将t卡插到板子上 板子上电 就会更新新的home_v459
+./mkall.sh
+sz ./out/yi_image/home_v459
+
+方法2：
+执行pack将新的工程打包，执行基本烧录的步骤即可
+

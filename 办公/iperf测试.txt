@@ -1,0 +1,11 @@
+将固件和iperf工具放到sd卡
+上电刷机
+串口输入
+cd /backup/tools
+export PATH=$PATH:/backup/tools
+vi set_wifi.sh 修改对应的 ssid&&pwd
+./set_wifi.sh
+观察wifi 是否链接成功 ifconfig(查看是否有wlan0 以及是否获得ip)
+
+cd /tmp/sd
+./iperf -c xxx.xxx.xxx.xxx(server ip)

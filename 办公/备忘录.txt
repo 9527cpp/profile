@@ -1,0 +1,159 @@
+邮箱 li.jun@xiaoyi.com   1
+服务器账户 lijun 123.com
+
+grep -w “xxx” -rn *
+find . -name "init.sh"
+du -lh
+ls -lh
+
+比较两个二进制文件
+vimdiff -bd a.bin b.bin
+
+vim 显示16进制
+在命令模式下 
+:%!xxd   (16进制显示)
+:%!xxd -r (10进制显示)
+
+修改了 没add 需要撤销 使用 git checkout .  或者 git checkout xxx(某个文件)
+修改了 add了 没commit 使用git reset HEAD 然后在git checkout .
+修改了 add了 commit了 没push到远程  使用 get reset --hard HEAD^
+
+
+git push origin HEAD:refs/for/v459-ipc
+
+
+repo 是用来管理所有的git库的
+
+repo forall -c git status
+repo forall -c git reset --hard HEAD
+repo forall -c git checkout remotes/origin/8M_flash
+
+
+
+
+partition 注意事项：
+
+uboot_start:736(分区大小以扇区为单位)
+
+uboot_start的值设置技巧
+boot_package_nor.fex(uboot) + boot0_spinor.fex + boot0_spinor.fex
+三者的和(字节为单位) *2  比如说x 
+现在要求某个 (y(y>=x)+32)的值要能够整除128即可
+现在打个比方 已知x=704 则可大致求得y=736  y=((x/128)+1)*128 -32
+uboot.img = (boot_package_nor.fex(实际编出来的uboot) + boot0_spinor.fex + boot0_spinor.fex)
+扇区单位 512 Bytes
+(mbr 前4个扇区为gpt)
+
+注：offset 都是以扇区个数计算的
+	offset(+uboot_start) 这个值必须要整除128( *512 / 65536)
+	否则小包升级的时候 会有问题
+	
+	name		real size			offset(sys_config)	offset(+uboot_start)	扇区大小(512byte)
+1：uboot 		294912									128(0x80)(除外)			240		
+2：mbr(gpt)   	16384  	   			0					736(0x2e0)				32		
+3：boot(kernel) 1877768				32   				768(0x300)				3712		
+4：rootfs							3744				4480(0x1180)			2304		
+5: home								6048				6784(0x1a80)			8960		
+6: env								15008				15744(0x3d80)			256		
+7: mfg								15264				16000(0x3e80)			128		
+8: conf								15392				16128(0x3f00)			128		
+9：udisk							15520									    0		
+10: 								15615									    15		
+11：gpt(bak)						15647									    1		
+
+0x000000000000-0x000000060000 : "uboot"
+0x000000060000-0x000000230000 : "boot"
+0x000000230000-0x000000350000 : "rootfs"
+0x000000350000-0x0000007c0000 : "home"
+0x0000007c0000-0x0000007e0000 : "env"
+0x0000007e0000-0x0000007f0000 : "mfg"
+0x0000007f0000-0x000000800000 : "conf"
+0x000000800000-0x000000857e00 : "UDISK"                  
+
+
+
+ (11.1 MiB/s)
+image[1] version same  kernel_v459		成功升级
+image[2] version same  rootfs_v459		成升级
+image[3] version same  home_v459	  成功升级
+					   v459_one_v459 无法升级
+					   
+					   
+					
+
+8M_flash
+
+application
+cboot
+ckernel
+cconfig../../v459
+
+
+softwinner/eyesee-mpp/system/public  libTinyServer
+allwinner/eyesee-mpp/system/public/Makefile
+
+
+\./out/v459-qg305r/staging_dir/target/usr/lib/eyesee-mpp/libTinyServer.so
+./applications/media/rmm/lib/mpp/libTinyServer.so
+./applications/out/home/qigan/lib/libTinyServer.so
+./applications/out/tmphome/home/qigan/lib/libTinyServer.so
+./softwinner/eyesee-mpp/system/public/rtsp/libTinyServer.so
+
+
+
+new  301
+AD44C93B907C9627E64F7D3
+AD44C93B907C9627E64F7D3
+
+
+ MODULE_INFO(srcversion, "3D2C152B44357FD8F0636CB");   
+
+ ODULE_INFO(srcversion, "3D2C152B44357FD8F0636CB");  
+ 
+ 
+ 
+ 
+ 
+ 1:
+ mount /dev/mmcblk0p1 /var/run
+ 2:
+ chmod +x /home/app/set_wifi.sh
+ 3:
+ /home/app/set_wifi.sh
+ 
+ 
+//// 工作站上 将编好的应用放在
+/srv/share/lijun
+
+
+//// 固件上
+cd /home/app
+(chmod +x /home/app/set_wifi.sh)
+./set_wifi.sh 
+./nfs_mount.sh
+cd nfs
+ 
+
+固件上		
+/backup/init.sh --> /home/app/lower_half_init.sh
+/backup 是由/application/out/backup 打包到backup 分区 然后挂载到/backup的 
+
+工程上  
+/application/out/backup  /application/out/home
+都是由 /application/out/tmphome/backup/
+和 /application/out/tmphome/home备份过去的 
+
+
+ 
+kernel 后期启动流程(busy box 启动阶段)
+kernel_init -- (/sbin/init,,,/etc/init/,,,/bin/init,,,/bin/sh) -- /etc/inittab
+
+ 
+145  orange_led   hi   red   
+237  blue_led     hi   green 
+11111111112112111101000000000000
+ 
+ 
+ 
+ 
+ 

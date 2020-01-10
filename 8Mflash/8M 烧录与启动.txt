@@ -1,0 +1,575 @@
+[231]HELLO! BOOT0 is starting Aug 20 2019 16:40:25!
+[236]BOOT0 commit : a14bf195ffa00afa79ac7c88d7f5265c29b44a02
+[273]board init start
+[275]set pll start
+[277]set pll end
+[279][pmu]: bus read error
+[281]board init ok
+[283]DRAM BOOT DRIVE INFO: V0.20
+[286]DRAM CLK = 528 MHz
+[289]DRAM Type = 2 (2:DDR2,3:DDR3)
+[292]DRAMC read ODT  off.
+[295]DRAM ODT off.
+[297]DRAM SIZE =64 M
+[303]DRAM simple test OK.
+[306]dram size =64
+[309]card no is 0
+[311]sdcard 0 line count 4
+[313][mmc]: mmc driver ver 2018-11-14 14:50
+[317][mmc]: sdc0 spd mode error, 2
+[321][mmc]: mmc 0 bias 0
+[328][mmc]: Wrong media type 0x0
+[331][mmc]: ***Try SD card 0***
+[342][mmc]: HSSDR52/SDR25 4 bit
+[345][mmc]: 50000000 Hz
+[347][mmc]: 3861 MB
+[349][mmc]: ***SD/MMC 0 init OK!!!***
+[400]Loading boot-pkg Succeed(index=0).
+[404]Entry_name        = optee
+[407]Entry_name        = u-boot
+[412]Entry_name        = soc-cfg
+[415]Entry_name        = dtb
+[418]Jump to secend Boot.
+MESSAGE: [0x0] TEE-CORE: OP-TEE version: sun8iw19p1_v0.6.0-1-gff4f8fd-dev #4 2019年 08月 15日 星期四 02:25:31 UTC arm
+
+
+U-Boot 2018.05-dirty (Nov 09 2019 - 09:34:01 +0800) Allwinner Technology
+
+[00.448]CPU:   Allwinner Family
+[00.451]Model: sun8iw19
+I2C:   ready
+[00.455]DRAM:  64 MiB
+[00.458]Relocation Offset is: f9f72000
+[00.474]secure enable bit: 0
+[00.477]pmu_axp2101_probe pmic_bus_read fail
+PMU: no found
+[00.482]bmu_axp2101_probe pmic_bus_read fail
+BMU: no found
+[00.487]CPU=816 MHz,PLL6=600 Mhz,AHB=200 Mhz, APB1=100Mhz  MBus=132Mhz
+[00.494]gic: sec monitor mode
+[00.496]flash init start
+[00.498]workmode = 17,storage type = 1
+try card 2
+set card number 2
+get card number 2
+mmc driver ver uboot2018:2019-8-15 16:34:00
+get mem for descripter OK !
+[00.513]get card2_boot_para:sdc_io_1v8 fail
+[00.520]get sdc_wipe fail.
+[00.523]get sdc2 sdc_erase fail.
+[00.526]get sdc2 sdc_boot fail.
+[00.529]get sdc2 sdc_wp fail.
+[00.531]get sdc2 sdc_hc_cap_unit fail.
+[00.535]get card2_boot_para:sdc_cal_delay_unit fail
+[00.539]get card2_boot_para:sdc_ex_dly_used fail
+[00.544]get sdc_ex_dly_used -69206049, use auto tuning sdly
+[00.549]get card2_boot_para:sdc_force_boot_tuning fail
+[00.554]get sdc2 sdc_odly_50M fail.
+[00.557]get sdc2 sdc_sdly_50M fail.
+[00.560]get sdc2 sdc_odly_50M_ddr fail.
+[00.564]get sdc2 sdc_sdly_50M_ddr fail.
+[00.567]get sdc2 sdc_freq fail.
+[00.570]get sdc2 sdc_b0p fail.
+[00.573]get sdc2 sdc_tm4_win_th fail.
+[00.576]get sdc2 sdc_tm4_r_cycle fail.
+[00.580]get sdc2 sdc_tm4_hs200_max_freq fail.
+[00.584]get sdc2 sdc_tm4_hs400_max_freq fail.
+[00.588]get sdc2 sdc_tm4_ext_freq_0 fail.
+[00.592]get sdc2 sdc_tm4_ext_freq_1 fail.
+[00.595]get sdc2 sdc_tm4_ext_freq_2 fail.
+[00.599]get sdc2 sdc_tm4_ext_freq_3 fail.
+[00.603]get sdc2 sdc_dis_host_caps fail.
+[00.606]get sdc2 sdc_kernel_no_limit fail.
+[00.610]Using default timing para
+[00.613]init mmc 2 clock and io
+devnum 2, prv 43fba60c, bdesc 42b924ec
+SUNXI SD/MMC: 2
+[00.621]==================== work mode: 17 0, sample_mode:0
+[00.626]=============== start mmc_init_boot...
+[00.645]Card did not respond to voltage select!
+[00.649]mmc_init: -95, time 28
+[00.652]mmc_init: mmc init fail, err -95
+MMC init failed
+try emmc fail
+SF: Detected w25q64cv with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+[00.665]MMC:	 0
+mmc driver ver uboot2018:2019-8-15 16:34:00
+get mem for descripter OK !
+[00.677]get sdc_wipe fail.
+[00.679]get sdc0 sdc_erase fail.
+[00.682]get sdc0 sdc_boot fail.
+[00.685]get sdc0 sdc_odly_50M fail.
+[00.688]get sdc0 sdc_sdly_50M fail.
+[00.691]get sdc0 sdc_odly_50M_ddr fail.
+[00.695]get sdc0 sdc_sdly_50M_ddr fail.
+[00.698]get sdc0 sdc_freq fail.
+[00.701]get sdc0 sdc_b0p fail.
+[00.704]get card0_boot_para:sdc_ex_dly_used fail
+[00.709]get card-pwr-gpios handler:1119692680
+[00.713]get card0_boot_para:time_pwroff:200ms
+[00.719]Using default timing para
+[00.921]init mmc 0 clock and io
+devnum 0, prv 43fb9c74, bdesc 42bd28cc
+[00.928]==================== work mode: 17 0, sample_mode:0
+[00.933]=============== start mmc_init_boot...
+card_caps:0x3000000a
+host_caps:0x3000003f
+[00.956]unable to read ssr
+[00.958]unable to read ssr
+[00.961]the mode SD Legacy (freq : 25 MHz)
+[00.966]Loading Environment from SUNXI_FLASH... OK
+[00.971]try sprite_led_gpio config
+[00.975]sprite_led_gpio start
+[00.977]Net:   [00.978]Net Initialization Skipped
+[00.982]No ethernet found.
+Hit any key to stop autoboot:  0 
+sunxi work mode=0x11
+run card sprite
+[00.996]try sprite_led_gpio config
+[01.000]sprite_led_gpio start
+[01.003]sunxi sprite begin
+production_media:3
+name:<NULL>
+firmware name <NULL>
+img start = 0x1820
+try to read mmc start 6176
+read mmc ok
+[01.021]firmware probe ok
+[01.023]fetch download map
+*************DOWNLOAD MAP DUMP************
+total download part 5
+
+download part[0] name          :boot
+download part[0] download file :BOOT_FEX00000000
+download part[0] verify file   :VBOOT_FEX0000000
+download part[0] lenlo         :0x1800
+download part[0] addrlo        :0x20
+download part[0] encrypt       :0x0
+download part[0] verify        :0x1
+
+download part[1] name          :rootfs
+download part[1] download file :ROOTFS_FEX000000
+download part[1] verify file   :VROOTFS_FEX00000
+download part[1] lenlo         :0x1000
+download part[1] addrlo        :0x1820
+download part[1] encrypt       :0x0
+download part[1] verify        :0x1
+
+download part[2] name          :env
+download part[2] download file :ENV_NOR_FEX00000
+download part[2] verify file   :VENV_NOR_FEX0000
+download part[2] lenlo         :0x100
+download part[2] addrlo        :0x2820
+download part[2] encrypt       :0x0
+download part[2] verify        :0x1
+
+download part[3] name          :mfg
+download part[3] download file :MFG_FEX000000000
+download part[3] verify file   :VMFG_FEX00000000
+download part[3] lenlo         :0x80
+download part[3] addrlo        :0x2920
+download part[3] encrypt       :0x0
+download part[3] verify        :0x1
+
+download part[4] name          :conf
+download part[4] download file :CONF_FEX00000000
+download part[4] verify file   :VCONF_FEX0000000
+download part[4] lenlo         :0x80
+download part[4] addrlo        :0x29a0
+download part[4] encrypt       :0x0
+download part[4] verify        :0x1
+
+[01.160]fetch mbr
+the 0 mbr table is ok
+*************MBR DUMP***************
+total mbr part 6
+
+part[0] name      :boot
+part[0] classname :DISK
+part[0] addrlo    :0x20
+part[0] lenlo     :0x1800
+part[0] user_type :32768
+part[0] keydata   :0
+part[0] ro        :0
+
+part[1] name      :rootfs
+part[1] classname :DISK
+part[1] addrlo    :0x1820
+part[1] lenlo     :0x1000
+part[1] user_type :32768
+part[1] keydata   :0
+part[1] ro        :0
+
+part[2] name      :env
+part[2] classname :DISK
+part[2] addrlo    :0x2820
+part[2] lenlo     :0x100
+part[2] user_type :32768
+part[2] keydata   :0
+part[2] ro        :0
+
+part[3] name      :mfg
+part[3] classname :DISK
+part[3] addrlo    :0x2920
+part[3] lenlo     :0x80
+part[3] user_type :32768
+part[3] keydata   :0
+part[3] ro        :0
+
+part[4] name      :conf
+part[4] classname :DISK
+part[4] addrlo    :0x29a0
+part[4] lenlo     :0x80
+part[4] user_type :32768
+part[4] keydata   :0
+part[4] ro        :0
+
+part[5] name      :UDISK
+part[5] classname :DISK
+part[5] addrlo    :0x2a20
+part[5] lenlo     :0x0
+part[5] user_type :0
+part[5] keydata   :0
+part[5] ro        :0
+
+*************MBR DUMP***************
+total mbr part 6
+
+part[0] name      :boot
+part[0] classname :DISK
+part[0] addrlo    :0x20
+part[0] lenlo     :0x1800
+part[0] user_type :0x8000
+part[0] keydata   :0x0
+part[0] ro        :0x0
+
+part[1] name      :rootfs
+part[1] classname :DISK
+part[1] addrlo    :0x1820
+part[1] lenlo     :0x1000
+part[1] user_type :0x8000
+part[1] keydata   :0x0
+part[1] ro        :0x0
+
+part[2] name      :env
+part[2] classname :DISK
+part[2] addrlo    :0x2820
+part[2] lenlo     :0x100
+part[2] user_type :0x8000
+part[2] keydata   :0x0
+part[2] ro        :0x0
+
+part[3] name      :mfg
+part[3] classname :DISK
+part[3] addrlo    :0x2920
+part[3] lenlo     :0x80
+part[3] user_type :0x8000
+part[3] keydata   :0x0
+part[3] ro        :0x0
+
+part[4] name      :conf
+part[4] classname :DISK
+part[4] addrlo    :0x29a0
+part[4] lenlo     :0x80
+part[4] user_type :0x8000
+part[4] keydata   :0x0
+part[4] ro        :0x0
+
+part[5] name      :UDISK
+part[5] classname :DISK
+part[5] addrlo    :0x2a20
+part[5] lenlo     :0x0
+part[5] user_type :0x0
+part[5] keydata   :0x0
+part[5] ro        :0x0
+
+[01.359]begin to erase flash
+need erase flash: 1
+no part need to protect user data
+erase size: 65536 ,sector size: 65536
+total 128 sectors, erase index 0
+total 128 sectors, erase index 16
+total 128 sectors, erase index 32
+total 128 sectors, erase index 48
+total 128 sectors, erase index 64
+total 128 sectors, erase index 80
+total 128 sectors, erase index 96
+total 128 sectors, erase index 112
+[24.294]successed in erasing flash
+SF: write offset not multiple of erase size
+write primary GPT success
+SF: write offset not multiple of erase size
+SF: write offset not multiple of erase size
+write Backup GPT success
+[25.053]begin to download part
+[25.056]begin to download part boot
+dl_name:BOOT_FEX00000000VBOOT_FEX0000000,vf_name:VBOOT_FEX0000000
+line:293 tmp_partstart_by_sector=0x20
+line:298 partsize_by_byte=0x300000
+line:302 part_info->dl_filename=BOOT_FEX00000000VBOOT_FEX0000000
+partdata hi 0x0
+partdata lo 0x1faf18
+line:351 onetime_read_sectors=0xfd8
+line:353 first_write_bytes=0x1faf18
+line:360 imgfile_start=tmp_imgfile_start=0x28ce
+sparse: bad magic
+[35.392]successed in writting part boot
+sunxi_sprite_part_rawdata_verify
+partstart_by_sector:32,partdata_by_byte:2076440
+read total sectors 4056
+read part start 32
+rest_sectors:4056,unaligned_bytes:280,last_time_bytes:2076440,check sum = 0x26d2840d
+origin_verify value = 26d2840d, active_verify value = 26d2840d
+[36.043]successed in verify part boot
+[36.046]successed in download part boot
+[36.050]begin to download part rootfs
+dl_name:ROOTFS_FEX000000VROOTFS_FEX00000,vf_name:VROOTFS_FEX00000
+line:293 tmp_partstart_by_sector=0x1820
+line:298 partsize_by_byte=0x200000
+line:302 part_info->dl_filename=ROOTFS_FEX000000VROOTFS_FEX00000
+partdata hi 0x0
+partdata lo 0x160000
+line:351 onetime_read_sectors=0xb00
+line:353 first_write_bytes=0x160000
+line:360 imgfile_start=tmp_imgfile_start=0x38a8
+sparse: bad magic
+[43.045]successed in writting part rootfs
+sunxi_sprite_part_rawdata_verify
+partstart_by_sector:6176,partdata_by_byte:1441792
+read total sectors 2816
+read part start 6176
+rest_sectors:2816,unaligned_bytes:0,last_time_bytes:1441792,check sum = 0x244e5a76
+origin_verify value = 244e5a76, active_verify value = 244e5a76
+[43.506]successed in verify part rootfs
+[43.510]successed in download part rootfs
+[43.514]begin to download part env
+dl_name:ENV_NOR_FEX00000VENV_NOR_FEX0000,vf_name:VENV_NOR_FEX0000
+line:293 tmp_partstart_by_sector=0x2820
+line:298 partsize_by_byte=0x20000
+line:302 part_info->dl_filename=ENV_NOR_FEX00000VENV_NOR_FEX0000
+partdata hi 0x0
+partdata lo 0x20000
+line:351 onetime_read_sectors=0x100
+line:353 first_write_bytes=0x20000
+line:360 imgfile_start=tmp_imgfile_start=0x43aa
+sparse: bad magic
+[44.180]successed in writting part env
+sunxi_sprite_part_rawdata_verify
+partstart_by_sector:10272,partdata_by_byte:131072
+read total sectors 256
+read part start 10272
+rest_sectors:256,unaligned_bytes:0,last_time_bytes:131072,check sum = 0xef218afd
+origin_verify value = ef218afd, active_verify value = ef218afd
+[44.248]successed in verify part env
+[44.252]successed in download part env
+[44.255]begin to download part mfg
+dl_name:MFG_FEX000000000VMFG_FEX00000000,vf_name:VMFG_FEX00000000
+line:293 tmp_partstart_by_sector=0x2920
+line:298 partsize_by_byte=0x10000
+line:302 part_info->dl_filename=MFG_FEX000000000VMFG_FEX00000000
+partdata hi 0x0
+partdata lo 0x10000
+line:351 onetime_read_sectors=0x80
+line:353 first_write_bytes=0x10000
+line:360 imgfile_start=tmp_imgfile_start=0x44ac
+sparse: bad magic
+[44.628]successed in writting part mfg
+sunxi_sprite_part_rawdata_verify
+partstart_by_sector:10528,partdata_by_byte:65536
+read total sectors 128
+read part start 10528
+rest_sectors:128,unaligned_bytes:0,last_time_bytes:65536,check sum = 0x0
+origin_verify value = 0, active_verify value = 0
+[44.674]successed in verify part mfg
+[44.678]successed in download part mfg
+[44.681]begin to download part conf
+dl_name:CONF_FEX00000000VCONF_FEX0000000,vf_name:VCONF_FEX0000000
+line:293 tmp_partstart_by_sector=0x29a0
+line:298 partsize_by_byte=0x10000
+line:302 part_info->dl_filename=CONF_FEX00000000VCONF_FEX0000000
+partdata hi 0x0
+partdata lo 0x10000
+line:351 onetime_read_sectors=0x80
+line:353 first_write_bytes=0x10000
+line:360 imgfile_start=tmp_imgfile_start=0x452e
+sparse: bad magic
+[45.064]successed in writting part conf
+sunxi_sprite_part_rawdata_verify
+partstart_by_sector:10656,partdata_by_byte:65536
+read total sectors 128
+read part start 10656
+rest_sectors:128,unaligned_bytes:0,last_time_bytes:65536,check sum = 0x0
+origin_verify value = 0, active_verify value = 0
+[45.110]successed in verify part conf
+[45.113]successed in download part conf
+[45.118]successed in downloading part
+uboot size = 0x6c000
+storage type = 3
+sunxi_sprite_deal_uboot ok
+[47.349]successed in downloading uboot
+dram para[0] = 210
+dram para[1] = 2
+dram para[2] = bf9
+dram para[3] = 0
+dram para[4] = d2
+dram para[5] = 400000
+dram para[6] = e73
+dram para[7] = 2
+dram para[8] = 0
+dram para[9] = 0
+dram para[10] = 471992
+dram para[11] = 131a10c
+dram para[12] = 57041
+dram para[13] = b4787896
+dram para[14] = 0
+dram para[15] = 48484848
+dram para[16] = 48
+dram para[17] = 1621121e
+dram para[18] = 0
+dram para[19] = 0
+dram para[20] = 0
+dram para[21] = 120000
+dram para[22] = 23
+dram para[23] = b4000903
+dram para[24] = 0
+dram para[25] = 0
+dram para[26] = 0
+dram para[27] = 0
+dram para[28] = 0
+dram para[29] = 0
+dram para[30] = 0
+dram para[31] = 0
+storage type = 3
+[47.683]successed in downloading boot0
+CARD OK
+[47.687]sprite success 
+sprite_next_work=3
+next work 3
+SUNXI_UPDATE_NEXT_ACTION_SHUTDOWN
+=> [38]HELLO! BOOT0 is starting Aug 20 2019 16:40:28!
+[43]BOOT0 commit : a14bf195ffa00afa79ac7c88d7f5265c29b44a02
+[80]board init start
+[82]set pll start
+[84]set pll end
+[86][pmu]: bus read error
+[88]board init ok
+[90]DRAM BOOT DRIVE INFO: V0.20
+[93]DRAM CLK = 528 MHz
+[95]DRAM Type = 2 (2:DDR2,3:DDR3)
+[99]DRAMC read ODT  off.
+[101]DRAM ODT off.
+[103]DRAM SIZE =64 M
+[110]DRAM simple test OK.
+[113]dram size =64
+[116]spinor id is: ef 40 17, read cmd: 0b
+[120]Succeed in reading toc file head.
+[124]The size of toc is 6c000.
+[242]Entry_name        = optee
+[245]Entry_name        = u-boot
+[250]Entry_name        = soc-cfg
+[254]Entry_name        = dtb
+[257]Jump to secend Boot.
+MESSAGE: [0x0] TEE-CORE: OP-TEE version: sun8iw19p1_v0.6.0-1-gff4f8fd-dev #4 2019年 08月 15日 星期四 02:25:31 UTC arm
+
+
+U-Boot 2018.05-dirty (Nov 09 2019 - 09:34:35 +0800) Allwinner Technology
+
+[00.287]CPU:   Allwinner Family
+[00.290]Model: sun8iw19
+I2C:   ready
+[00.294]DRAM:  64 MiB
+[00.297]Relocation Offset is: f9f6c000
+[00.313]secure enable bit: 0
+[00.316]pmu_axp2101_probe pmic_bus_read fail
+PMU: no found
+[00.321]bmu_axp2101_probe pmic_bus_read fail
+BMU: no found
+[00.326]CPU=816 MHz,PLL6=600 Mhz,AHB=200 Mhz, APB1=100Mhz  MBus=132Mhz
+[00.333]gic: sec monitor mode
+[00.335]flash init start
+[00.337]workmode = 0,storage type = 3
+SF: Detected w25q64cv with page size 256 Bytes, erase size 64 KiB, total 8 MiB
+[00.348]sunxi flash init ok
+[00.351]Loading Environment from SUNXI_FLASH... OK
+[00.381]try sprite_led_gpio config
+[00.385]sprite_led_gpio start
+[00.388](weak)update dtb dram start
+[00.392]update dtb dram  end
+[00.395]update dts
+root_partition is rootfs
+set root to /dev/mtdblock2
+[00.404]update part info
+[00.406]update bootcmd
+[00.408]Net:   [00.410]Net Initialization Skipped
+[00.413]No ethernet found.
+mmc driver ver uboot2018:2019-8-15 16:34:00
+get mem for descripter OK !
+[00.426]get sdc_wipe fail.
+[00.428]get sdc0 sdc_erase fail.
+[00.431]get sdc0 sdc_boot fail.
+[00.434]get sdc0 sdc_odly_50M fail.
+[00.437]get sdc0 sdc_sdly_50M fail.
+[00.440]get sdc0 sdc_odly_50M_ddr fail.
+[00.444]get sdc0 sdc_sdly_50M_ddr fail.
+[00.447]get sdc0 sdc_freq fail.
+[00.450]get sdc0 sdc_b0p fail.
+[00.453]get card0_boot_para:sdc_ex_dly_used fail
+[00.458]get card-pwr-gpios handler:1119143520
+[00.462]get card0_boot_para:time_pwroff:200ms
+[00.467]Using default timing para
+[00.670]init mmc 0 clock and io
+devnum 0, prv 43fb6cd4, bdesc 42b4c804
+SUNXI SD/MMC: 0
+[00.678]==================== work mode: 0 0, sample_mode:0
+[00.683]=============== start mmc_init_boot...
+[00.701]Card did not respond to voltage select!
+[00.706]mmc_init: -95, time 28
+[00.708]mmc_init: mmc init fail, err -95
+card0 init failed
+No sd-card insert,will normal boot
+Hit any key to stop autoboot:  0 
+[01.725]partinfo: name boot, start 0x20, size 0x1800
+[02.202]android.hardware = sun8iw19p1
+## Booting kernel from Legacy Image at 45000000 ...
+   Image Name:   ARM OpenWrt Linux-4.9.118
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    2076376 Bytes = 2 MiB
+   Load Address: 40008000
+   Entry Point:  40008000
+[02.270]Starting kernel ...
+
+** 5 printk messages dropped ** [    0.000000] ion_mem_reserve: err format for ion reserve list!
+[    0.124866] ion_heap_create: Invalid heap type 4
+[    0.132125] sunxi_i2c_probe()2196 - [i2c1] warning: failed to get regulator id
+[    0.158840] uart uart0: get regulator failed
+[    0.188450] uart uart1: get regulator failed
+[    0.195438] sunxi-wlan wlan: get gpio wlan_regon failed
+[    0.201873] sunxi-wlan wlan: get gpio wlan_hostwake failed
+[    0.310242] VE: get debugfs_mpp_root is NULL, please check mpp
+[    0.310242] 
+starting pid 537, tty '': '/etc/init.d/rcS boot'
+[RCS]: /etc/init.d/S01udev
+Populating /dev using udev: [    0.878132] udevd[542]: could not create /run/udev: No such file or directory
+done
+[RCS]: /etc/init.d/S02app
+mount: mounting /dev/mtdblock3 on /home failed: I/O error
+/home/app/init.sh not exist!
+[RCS]: /etc/init.d/S20urandom
+read-only file system detected...done
+starting pid 551, tty '/dev/console': '-/bin/sh'
+
+
+BusyBox v1.27.2 () built-in shell (ash)
+
+
+            __    __   _
+            \ \  / /  | |
+             \ \/ /   | |
+              \  /    | |
+              / /     | |
+             /_/      |_|
+ ------------------------------------
+ Welcome to XiaoYi Linux.
+ ------------------------------------
+ 
+root@(none):/# 
