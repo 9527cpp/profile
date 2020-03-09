@@ -122,17 +122,28 @@ AD44C93B907C9627E64F7D3
  /home/app/set_wifi.sh
  
  
-//// 工作站上 将编好的应用放在
-/srv/share/lijun
+ 
+/////////////////////// 本机编译 快速在设备上验证方法
+ 
+//// 本机上 将编好的应用放在
+./mk.sh app
+cp applications/out/home/app/cloud /srv/share/lijun/
 
 
-//// 固件上
+//// 固件上(第一次)
 cd /home/app
 (chmod +x /home/app/set_wifi.sh)
 ./set_wifi.sh 
 ./nfs_mount.sh
 cd nfs
- 
+killall watch_process
+
+//// (后续)
+killall cloud
+../cloud &
+
+对于dispatch的话是删除不了的
+
 
 固件上		
 /backup/init.sh --> /home/app/lower_half_init.sh
@@ -154,6 +165,8 @@ kernel_init -- (/sbin/init,,,/etc/init/,,,/bin/init,,,/bin/sh) -- /etc/inittab
 11111111112112111101000000000000
  
  
- 
+ 从16M 切换到 8M 会有编不过的问题
+ 需要删除8188fu.ko.7z文件
+/applications/out/tmphome/home/base/wifi$ rm 8188fu.ko.7z  
  
  
